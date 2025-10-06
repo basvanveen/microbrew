@@ -1,0 +1,10 @@
+{
+    "temperatureMode": "target", 
+    "temperatureUnit": "celsius",
+    "temperatureSensor": "raptpill",
+    "thermalState": "OFF",
+    "targetTemperature": 20,
+    "coolingPin": 3,
+    "heatingPin": 2,
+    "hysteresis": 0.5
+}
