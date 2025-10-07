@@ -87,10 +87,14 @@ GET `/metrics`
 curl http://CONTROLLER_IP/metrics | jq
 ```
 
-## HARDWARE/ACTION PICS 📸
+## HARDWARE/IMPRESSION PICS 📸
 
-![grafana dash](/pictures/grafanadash.png)
-![raptdebug1](/pictures/raptdebug.JPG)
-![raptdebug2](/pictures/raptdebug2.JPG)
-![tinkering](/pictures/tinkering.JPG)
-![afterferment](/pictures/afterfermentation.JPG)
+<p align="center">
+  <img src="images/raptdebug.JPG" width="350" title="pill debug in water">
+  <img src="images/raptdebug2.JPG" width="350" title="pill debug">
+  <img src="images/tinkering.JPG" width="350" title="outlets">
+  <img src="images/afterfermentation.JPG" width="350" title="pill after fermentation 🙃">
+</p>
+<p align="center">
+  <img src="images/grafanadash.png" width="350" title="grafana dash">  
+</p>
