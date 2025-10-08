@@ -119,8 +119,8 @@ example output:
   <img src="images/raptdebug2.JPG" width="350" title="pill debug">
   <img src="images/tinkering.JPG" width="350" title="outlets">
   <img src="images/simpleoutletbox.jpg" width="350" title="outletbox">
-  <img src="images/insidebox.JPG" width="350" title="esp inside box with relays">
-  <img src="images/afterfermentation.jpg" width="350" title="pill after fermentation 🙃">
+  <img src="images/insidebox.jpg" width="350" title="esp inside box with relays">
+  <img src="images/afterfermentation.JPG" width="350" title="pill after fermentation 🙃">
 </p>
 <p align="center">
   <img src="images/grafanadash.png" width="350" title="grafana dash">  
