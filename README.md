@@ -27,6 +27,10 @@ Third Party libraries like [microdot](https://github.com/miguelgrinberg/microdot
 - Bluetooth metrics exposing (gravity,temperature,battery-level and rssi)
 - Debug mode capability / run without actual sensor input
 
+-- TODO -- 
+- Integrate Oled status screen (OT822-C66)
+- Create more minimal/nicer enclosure/casing
+
 ## Configuration
 
 ### WIFI
@@ -86,6 +90,27 @@ GET `/metrics`
 ```bash
 curl http://CONTROLLER_IP/metrics | jq
 ```
+example output:
+```bash
+➜  ~ curl --silent http://192.168.10.123/metrics | jq
+{
+  "heatingPin": 2,
+  "currentGravity": 1.23873,
+  "yAxis": -239.625,
+  "ReceivedSignalStrength": -59,
+  "coolingPin": 3,
+  "zAxis": 1024.5,
+  "targetTemperature": 20,
+  "temperatureUnit": "celsius",
+  "batteryPercentage": 77.69922,
+  "currentTemperature": 18.06094,
+  "thermalState": "HEATING",
+  "xAxis": 67.75,
+  "temperatureSensor": "raptpill",
+  "hysteresis": 0.5,
+  "temperatureMode": "target"
+}
+```
 
 ## HARDWARE/IMPRESSION PICS 📸
 
@@ -93,6 +118,8 @@ curl http://CONTROLLER_IP/metrics | jq
   <img src="images/raptdebug.JPG" width="350" title="pill debug in water">
   <img src="images/raptdebug2.JPG" width="350" title="pill debug">
   <img src="images/tinkering.JPG" width="350" title="outlets">
+  <img src="images/simpleoutletbox.JPG" width="350" title="outletbox">
+  <img src="images/insidebox.JPG" width="350" title="esp inside box with relays">
   <img src="images/afterfermentation.JPG" width="350" title="pill after fermentation 🙃">
 </p>
 <p align="center">
