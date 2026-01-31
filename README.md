@@ -15,6 +15,14 @@ might be a good starting point to start tinkering yourself or save you the rapt 
 headaches 😅.
 
 Third Party libraries like [microdot](https://github.com/miguelgrinberg/microdot) not written by me but were very useful! ❤️
+
+<p align="center">
+  <img src="images/relais_with_display_pill_connected.jpg" width="350" title="relais and esp">
+  <img src="images/outlet_and_pill.jpg" width="350" title="outletbox">
+
+</p>
+<p align="center">
+
 ## Capabilities
 
 - Control heating
@@ -27,9 +35,11 @@ Third Party libraries like [microdot](https://github.com/miguelgrinberg/microdot
 - Bluetooth metrics exposing (gravity,temperature,battery-level and rssi)
 - Debug mode capability / run without actual sensor input
 
--- TODO -- 
-- Integrate Oled status screen (OT822-C66)
+-- <s>TODO</s> DONE Q4 '25  -- 
+- Integrate Oled status screen (SSD1306)
 - Create more minimal/nicer enclosure/casing
+
+<a href="stl/square-5mm-edges-with-outerside-and-holes-and-display-hole-indented-with-display-holes.stl">OLED INLAY DESIGN 3D/STL FILE HERE</a>
 
 ## Configuration
 
@@ -115,12 +125,12 @@ example output:
 ## HARDWARE/IMPRESSION PICS 📸
 
 <p align="center">
-  <img src="images/raptdebug.JPG" width="350" title="pill debug in water">
-  <img src="images/raptdebug2.JPG" width="350" title="pill debug">
-  <img src="images/tinkering.JPG" width="350" title="outlets">
-  <img src="images/simpleoutletbox.jpg" width="350" title="outletbox">
-  <img src="images/insidebox.jpg" width="350" title="esp inside box with relays">
-  <img src="images/afterfermentation.JPG" width="350" title="pill after fermentation 🙃">
+  <img src="images/outlet_inside.jpg" width="350" title="esp inside box with relays">
+  <img src="images/outlet_finished.jpg" width="350" title="esp inside box with relays">
+<p align="center">
+  <img src="images/sketchup_oled_design.jpg" width="350" title="sketchup mini oled frame design">
+  <img src="images/raptdebug.jpg" width="350" title="pill debug in water">
+  </p>
 </p>
 <p align="center">
   <img src="images/grafanadash.png" width="350" title="grafana dash">  
