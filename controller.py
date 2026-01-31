@@ -3,6 +3,8 @@ import time
 import machine
 import bluetooth
 from struct import unpack
+import ssd1306
+import font
 
 validTemperatureModes = ['target', 'manual']
 validThermalStates = ["HEATING","COOLING","OFF"]
@@ -13,7 +15,7 @@ class MicroBrewery:
 
     def __init__(self, name, debugmode):
         self.debugmode = debugmode
-        self.currentTemperature = None # default
+        self.currentTemperature = 0.0 # default
         self.batteryPercentage = None
         self.xAxis = 0
         self.yAxis = 0
@@ -29,6 +31,31 @@ class MicroBrewery:
             print("enabling bluetooth")
             print(self.ble.active(True))
             self.doBluetoothScan()
+        self.displayWidth = 128
+        self.displayHeight = 64
+        self.display = ssd1306.SSD1306_I2C(self.displayWidth, self.displayHeight, machine.SoftI2C(scl=machine.Pin(7), sda=machine.Pin(6)) )
+
+    def update_display(self):
+        self.display.fill(0)
+        if self.controlProfile['thermalState'] is not "COOLING":
+          font.Font(self.display).text(f"{self.currentTemperature:.2f}C   {self.controlProfile['thermalState']}", 0, 0, 16)
+          #self.display.text(f"         {self.controlProfile['thermalState']}", 0, 6)
+          #self.display.text("{:.2f}    {}".format(self.currentTemperature,self.controlProfile['thermalState']), 0, 6)
+        else:
+          font.Font(self.display).text(f"{self.currentTemperature:.2f}   ", 0, 0, 16)
+          #self.display.text("{:.2f}   ".format(self.currentTemperature), 0, 6)
+        if self.controlProfile['thermalState'] is "COOLING":
+          #self.display.text(f"         {self.controlProfile['thermalState']}", 0, 16)
+          font.Font(self.display).text(f"         {self.controlProfile['thermalState']}", 0, 16)
+
+        #self.display.text(f"STATE  : {self.controlProfile['thermalState']}", 0, 16)
+        self.display.text(f"GRAVITY: {self.currentGravity}", 0, 32)
+        self.display.text(f"BATTERY: {self.batteryPercentage}", 0, 40)
+        self.display.text(f"TARGET : {self.controlProfile['targetTemperature']}C", 0, 48)
+        self.display.text(f"SIGNAL : {self.rssi}",0, 56)
+        # self.display.text(f"ADDRESS: {self.ipaddr}", 0, 56)           
+        self.display.show()
+        return "updated"
 
     def update_temperature(self):
         if self.currentTemperature is None:

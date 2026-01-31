@@ -1,6 +1,8 @@
 import sys
 # adding microdot path for simpler import
 sys.path.insert(1, 'microdot/')
+# import display libs
+sys.path.insert(1, 'libs')
 import asyncio
 from microdot import Microdot
 from controller import MicroBrewery
@@ -48,9 +50,16 @@ async def thermalLoop():
         print(f"State: {controller.update_temperature()}")
         await asyncio.sleep(5)
 
+async def displayLoop():
+    print("entering displayLoop")
+    while True:
+        print(f"State: {controller.update_display()}")
+        await asyncio.sleep(5)
+
 async def main():
     sensor  = asyncio.create_task(sensorLoop())
     thermal = asyncio.create_task(thermalLoop())
+    display = asyncio.create_task(displayLoop())
     server  = asyncio.create_task(app.run(port=80))
 
     # cleanup
